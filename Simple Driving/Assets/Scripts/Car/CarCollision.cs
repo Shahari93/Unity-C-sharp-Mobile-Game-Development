@@ -6,7 +6,7 @@ public class CarCollision : MonoBehaviour
    {
         if(other.CompareTag("Obstacle"))
         {
-            SceneMenege.LoadNextScene();
+            SceneMenege.LoadMenuScene();
         }
    }
 }
