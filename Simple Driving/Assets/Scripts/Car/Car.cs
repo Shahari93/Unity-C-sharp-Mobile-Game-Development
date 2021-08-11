@@ -7,9 +7,10 @@ public class Car : MonoBehaviour
     [SerializeField] private float turnSpeed = 200f;
     private int turnValue;
 
-    private void Update() {
-        carSpeed+=changeSpeedOverTime * Time.deltaTime; // change the car speed each second (frame independent)
-        transform.Rotate(0f,turnValue * turnSpeed * Time.deltaTime, 0f);
+    private void Update()
+    {
+        carSpeed += changeSpeedOverTime * Time.deltaTime; // change the car speed each second (frame independent)
+        transform.Rotate(0f, turnValue * turnSpeed * Time.deltaTime, 0f);
         transform.Translate(Vector3.forward * carSpeed * Time.deltaTime);
     }
 
