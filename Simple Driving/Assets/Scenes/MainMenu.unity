@@ -267,7 +267,6 @@ MonoBehaviour:
   maxEnergy: 5
   energyRechargeRateInMinutes: 1
   energyText: {fileID: 1923412050}
-  energy: 0
 --- !u!1 &1293678251
 GameObject:
   m_ObjectHideFlags: 0
