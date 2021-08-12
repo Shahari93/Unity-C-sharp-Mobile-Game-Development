@@ -11,6 +11,7 @@ public class SceneMenege : MonoBehaviour
 
     private void Start()
     {
+        // If there is no high score, set it as zero
         int score = PlayerPrefs.GetInt(ScoreSystem.HighScoreString, 0);
         highScoreText.text = $"High Score: {score}";
     }
@@ -22,6 +23,7 @@ public class SceneMenege : MonoBehaviour
 
     public static void LoadGamePlayScene(int sceneIndex)
     {
+        // Checking if we have enough energy to start the game
         if (EnergyManager.Energy < 1)
         {
             return;
