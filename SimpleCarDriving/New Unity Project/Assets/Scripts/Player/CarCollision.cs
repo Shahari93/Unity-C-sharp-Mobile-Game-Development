@@ -8,7 +8,7 @@ public class CarCollision : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            ManageScenes.LoadNextScene(0);
+            ManageScenes.LoadMainMenuScene(0);
         }
     }
 }
