@@ -436,7 +436,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energyText: {fileID: 188087372}
   maxEnergy: 5
-  energyRechargeRate: 1
 --- !u!1 &822262151
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,8 +714,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1145090961}
-        m_TargetAssemblyTypeName: ManageScenes, Assembly-CSharp
+      - m_Target: {fileID: 1881510040}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: StartGameplayScene
         m_Mode: 3
         m_Arguments:
@@ -924,6 +923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1881510039}
   - component: {fileID: 1881510040}
+  - component: {fileID: 1881510041}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -958,6 +958,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScoreText: {fileID: 10591136}
+  androidNotification: {fileID: 1881510041}
+--- !u!114 &1881510041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881510038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae1b70aa4ff4624ca6b24767ee20613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1934196072
 GameObject:
   m_ObjectHideFlags: 0
