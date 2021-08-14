@@ -436,6 +436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energyText: {fileID: 188087372}
   maxEnergy: 5
+  playButton: {fileID: 1484530353}
 --- !u!1 &822262151
 GameObject:
   m_ObjectHideFlags: 0

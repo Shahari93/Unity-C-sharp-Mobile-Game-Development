@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnergyManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class EnergyManager : MonoBehaviour
 
     [Header("Energy amount")]
     [SerializeField] private int maxEnergy;
+
+
+    [SerializeField] private Button playButton;
 
     #region energyRechageRate
     private static int energyRechargeRate = 1; // In minutes
@@ -40,8 +44,19 @@ public class EnergyManager : MonoBehaviour
     public const string EnergyKey = "Energy";
     public const string EnergyReadyKey = "EnergyReady";
 
+
     private void Start()
     {
+        OnApplicationFocus(true);
+    }
+
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        // if closing the app
+        if(!hasFocus) { return; }
+
+        //If we have focus (open or maximize the app) cancel all invokes 
+        CancelInvoke();
         EnergyCheck();
     }
 
@@ -70,8 +85,21 @@ public class EnergyManager : MonoBehaviour
                 energy = maxEnergy;
                 PlayerPrefs.SetInt(EnergyKey, energy);
             }
-
+            // Now the energy will recharged even if the game is still on
+            else
+            {
+                playButton.interactable = false;
+                Invoke(nameof(EnergyRecharged), (energyReadyDateTime - DateTime.Now).Seconds);
+            }
         }
+        energyText.text = $"Enrgy: {energy}";
+    }
+
+    private void EnergyRecharged()
+    {
+        energy = maxEnergy;
+        PlayerPrefs.SetInt(EnergyKey, energy);
+        playButton.interactable = true;
         energyText.text = $"Enrgy: {energy}";
     }
 }
